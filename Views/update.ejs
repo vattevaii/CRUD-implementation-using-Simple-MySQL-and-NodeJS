@@ -1,0 +1,12 @@
+<a href="/">Home</a>
+<h1>Data Update form : </h1>
+<form action="" method="POST">
+    <input type="text" name="id" id="id" value="<%= data.id %>" disabled/>
+    <input type="text" name="fName" id="fName" value="<%= data.first_name %>" />
+    <input type="text" name="lName" id="lName" value="<%= data.last_name %>" />
+    <input type="email" name="email" id="email" value="<%= data.email %>" />
+    <input type="submit" value="Submit">
+</form>
+<%= message %>
+    <br>
+    <%= msg %>

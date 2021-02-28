@@ -1,0 +1,36 @@
+<head>
+    <title>All Entries</title>
+    <style>
+        span {
+            display: inline-block;
+            margin: 5px 0;
+            padding: 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello World All Entries</h1>
+    <a href="/insert">Add entry</a>
+    <br><br> Search entry
+    <form action="/person" method="post">
+        <input type="text" name="id" id="id" placeholder="ID" />
+        <input type="submit" value="Search">
+    </form>
+    <div class="table">
+        <% data.forEach(element => { %>
+            <div>
+                <span><%= element.id %></span>
+                <span><%= element.first_name %></span>
+                <span><%= element.last_name %></span>
+                <span><%= element.email %></span>
+                <span><a href="/update/<%=element.id%>">Update</a></span>
+                <span><a href="/delete/<%=element.id%>">Delete</a></span>
+            </div>
+            <% }) %>
+                <h1>
+                    <%= name %>
+                </h1>
+    </div>
+</body>

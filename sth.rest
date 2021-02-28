@@ -1,0 +1,12 @@
+GET http://localhost:400/home
+Content-Type: application/json
+{
+    "user" : 1
+}
+
+###
+
+POST http://localhost:400/
+
+Content-Type: text/plain
+Ashish Bhattarai
