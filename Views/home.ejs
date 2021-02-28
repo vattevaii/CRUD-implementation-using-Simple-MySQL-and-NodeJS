@@ -1,18 +1,23 @@
 <head>
     <title>All Entries</title>
     <style>
+        span:nth-of-type(1) {
+            margin-left: 2em;
+        }
+        
         span {
             display: inline-block;
-            margin: 5px 0;
+            margin: 0;
             padding: 5px;
             width: 200px;
         }
     </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
     <h1>Hello World All Entries</h1>
-    <a href="/insert">Add entry</a>
+    <a href="/insert" class="emp">Add entry</a>
     <br><br> Search entry
     <form action="/person" method="post">
         <input type="text" name="id" id="id" placeholder="ID" />
@@ -29,8 +34,8 @@
                 <span><a href="/delete/<%=element.id%>">Delete</a></span>
             </div>
             <% }) %>
-                <h1>
-                    <%= name %>
+                <h1 id="alert">
+                    <%= name || "All Entries Above" %>
                 </h1>
     </div>
 </body>

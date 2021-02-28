@@ -1,13 +1,25 @@
-<a href="/">Home</a>
+<link rel="stylesheet" href="/styles.css">
+<a href="/" class="emp">Home</a>
+<h2>Insert Data</h2>
 <form action="/insert" method="post">
-    <label for="id">ID : </label>
-    <input type="text" name="id" id="id">
-    <label for="fName">First Name : </label>
-    <input type="text" name="fName" id="fn">
-    <label for="lName">Last Name : </label>
-    <input type="text" name="lName" id="ln">
-    <label for="email">E-Mail : </label>
-    <input type="text" name="email" id="em">
+    <div>
+        <label for="id">ID : </label>
+        <input type="text" name="id" id="id">
+    </div>
+    <div>
+        <label for="fName">First Name : </label>
+        <input type="text" name="fName" id="fn">
+    </div>
+    <div>
+        <label for="lName">Last Name : </label>
+        <input type="text" name="lName" id="ln">
+    </div>
+    <div>
+        <label for="email">E-Mail : </label>
+        <input type="text" name="email" id="em">
+    </div>
     <input type="submit" value="SUBMIT">
 </form>
-<%= message %>
+<div id="alert">
+    <%= message %>
+</div>

@@ -8,5 +8,8 @@ Content-Type: application/json
 
 POST http://localhost:400/
 
-Content-Type: text/plain
-Ashish Bhattarai
+Content-Type: application/json
+{
+    "first_name" : 1
+}
+

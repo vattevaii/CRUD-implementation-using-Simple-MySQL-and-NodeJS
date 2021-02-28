@@ -1,0 +1,86 @@
+a {
+    display: inline-block;
+    background-color: yellow;
+    text-decoration: none;
+    color: blue;
+    padding: 1em 0.7em;
+}
+
+a:hover {
+    color: yellow;
+    background-color: orange;
+}
+
+a.emp {
+    color: white;
+    background-color: black;
+}
+
+a.emp:hover {
+    background-color: grey;
+}
+
+* {
+    margin: 20px 0;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+html {
+    font-size: 1.2em;
+    background: linear-gradient(30deg, white, rgb(212, 211, 211));
+}
+
+body {
+    width: min(900px, 100vw);
+    margin: 0 auto;
+}
+
+.table>*:nth-child(odd) {
+    background-color: #e3efd3;
+    margin: 0;
+    padding: 20px 10px;
+}
+
+.table>*:nth-child(even) {
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 20px 10px;
+}
+
+#alert {
+    font-size: 2em;
+    position: fixed;
+    left: -100%;
+    top: 30vh;
+    width: 200px;
+    background-color: rgba(240, 248, 255, 0.918);
+    animation: slideLeft 2s;
+    padding-left: 1em;
+}
+
+@-webkit-keyframes slideLeft {
+    0% {
+        left: -100%;
+    }
+    25% {
+        left: 0;
+    }
+    75% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+input {
+    padding: 0.6em;
+    border-radius: 50px;
+}
+
+form>div {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}

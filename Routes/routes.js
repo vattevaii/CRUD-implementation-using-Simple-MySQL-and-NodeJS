@@ -41,7 +41,7 @@ router.get('/delete/:id', async(req, res) => {
     let sql = `DELETE FROM persons WHERE id = ${req.params.id}`;
     let data = await dbConn.query(sql, (err, rows) => {
         if (!!err) console.log(err);
-        res.redirect('/?msg=' + encodeURIComponent("Row Deleted !!"));
+        res.redirect('/person?msg=' + encodeURIComponent("Row Deleted !!"));
     });
 });
 router.get('/insert', async(req, res) => {
@@ -82,3 +82,11 @@ router.get('/noentry', async(req, res) => {
 })
 
 module.exports = router;
+
+
+
+
+// UPDATE employee SET `city`="Pokhara" WHERE name="Jonas";
+
+// UPDATE works SET `salary`=salary*1.3
+// WHERE works.company_name="NABIL Bank" AND works.employee_name=manages.employee_name

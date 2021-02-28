@@ -13,10 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/', routes);
-
-// app.put();
-// app.post();
-// app.delete();
+app.use(express.static(__dirname + '/public'))
+    // app.put();
+    // app.post();
+    // app.delete();
 
 const port = process.env.PORT || 400;
 

@@ -1,4 +1,5 @@
-<a href="/">Home</a>
+<link rel="stylesheet" href="/styles.css">
+<a href="/" class="emp">Home</a>
 <h1>Data Update form : </h1>
 <form action="" method="POST">
     <input type="text" name="id" id="id" value="<%= data.id %>" disabled/>
@@ -9,4 +10,6 @@
 </form>
 <%= message %>
     <br>
-    <%= msg %>
+    <div id="alert">
+        <%= msg %>
+    </div>
