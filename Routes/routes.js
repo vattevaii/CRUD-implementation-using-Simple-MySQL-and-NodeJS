@@ -25,7 +25,7 @@ router.get('/person', async(req, res) => {
     // console.log(message);
     let sql = 'SELECT * FROM persons';
     let data = await dbConn.query(sql, (err, rows) => {
-        if (!!err) console.log(err);
+        if (!!err) return res.redirect('/noentry?data=' + encodeURIComponent("No Connection"));
         res.render('home.ejs', { data: rows, name: message });
     });
 });
@@ -40,7 +40,10 @@ router.get('/person/:id', async(req, res) => {
 router.get('/delete/:id', async(req, res) => {
     let sql = `DELETE FROM persons WHERE id = ${req.params.id}`;
     let data = await dbConn.query(sql, (err, rows) => {
-        if (!!err) console.log(err);
+        if (!!err) {
+            console.log(err);
+            return res.redirect('/noentry?data=' + encodeURIComponent("Operation Failed"));
+        }
         res.redirect('/person?msg=' + encodeURIComponent("Row Deleted !!"));
     });
 });
@@ -72,13 +75,17 @@ router.get('/update/:id', async(req, res) => {
     let message = req.query.msg;
     let sql = `SELECT * FROM persons WHERE id=${req.params.id}`;
     let data = await dbConn.query(sql, (err, rows) => {
-        if (!!err) console.log(err);
+        if (!!err) {
+            console.log(err);
+            return res.redirect('/noentry');
+        }
+
         // console.log(rows);
         res.render('update.ejs', { message: "Requested Data !!", msg: message, data: rows[0] }, );
     });
 });
 router.get('/noentry', async(req, res) => {
-    res.send("No such entry found !!!");
+    res.send(req.query.data);
 })
 
 module.exports = router;
